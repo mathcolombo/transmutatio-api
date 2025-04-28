@@ -5,16 +5,28 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AD7ADD76-50A0-4191-84C8-85F8225C4F13}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmutatio.Infra", "Transmutatio.Infra\Transmutatio.Infra.csproj", "{FC499E45-DB5C-4DB7-88F6-D37F2C41D3B6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{859B2B1E-B605-4981-B82F-57D414AF7E19} = {859B2B1E-B605-4981-B82F-57D414AF7E19}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmutatio.Domain", "Transmutatio.Domain\Transmutatio.Domain.csproj", "{859B2B1E-B605-4981-B82F-57D414AF7E19}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmutatio.Ioc", "Transmutatio.Ioc\Transmutatio.Ioc.csproj", "{780F2BA3-14B6-4680-8C4F-8D84E1E8B113}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmutatio.Api", "Transmutatio.Api\Transmutatio.Api.csproj", "{870FE486-51A9-49FD-B19E-C4894426C255}"
+	ProjectSection(ProjectDependencies) = postProject
+		{780F2BA3-14B6-4680-8C4F-8D84E1E8B113} = {780F2BA3-14B6-4680-8C4F-8D84E1E8B113}
+		{D54C669B-6376-483E-9464-B6976641400C} = {D54C669B-6376-483E-9464-B6976641400C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmutatio.Domain.Tests", "Transmutatio.Domain.Tests\Transmutatio.Domain.Tests.csproj", "{E3BEDB10-B825-41D3-BF3F-3DF4EE0A1FE7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmutatio.Sandbox", "Transmutatio.Sandbox\Transmutatio.Sandbox.csproj", "{B397369B-A079-44FA-AB4E-7E217EFBDD52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmutatio.Application", "Transmutatio.Application\Transmutatio.Application.csproj", "{D54C669B-6376-483E-9464-B6976641400C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{859B2B1E-B605-4981-B82F-57D414AF7E19} = {859B2B1E-B605-4981-B82F-57D414AF7E19}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +58,10 @@ Global
 		{B397369B-A079-44FA-AB4E-7E217EFBDD52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B397369B-A079-44FA-AB4E-7E217EFBDD52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B397369B-A079-44FA-AB4E-7E217EFBDD52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D54C669B-6376-483E-9464-B6976641400C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D54C669B-6376-483E-9464-B6976641400C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D54C669B-6376-483E-9464-B6976641400C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D54C669B-6376-483E-9464-B6976641400C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{870FE486-51A9-49FD-B19E-C4894426C255} = {71FD151B-4248-41B8-8EC9-D8415F8D58E1}
