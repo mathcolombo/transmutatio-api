@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmutatio.Api", "Transmu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmutatio.Domain.Tests", "Transmutatio.Domain.Tests\Transmutatio.Domain.Tests.csproj", "{E3BEDB10-B825-41D3-BF3F-3DF4EE0A1FE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmutatio.Sandbox", "Transmutatio.Sandbox\Transmutatio.Sandbox.csproj", "{B397369B-A079-44FA-AB4E-7E217EFBDD52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,9 +42,14 @@ Global
 		{E3BEDB10-B825-41D3-BF3F-3DF4EE0A1FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3BEDB10-B825-41D3-BF3F-3DF4EE0A1FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3BEDB10-B825-41D3-BF3F-3DF4EE0A1FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B397369B-A079-44FA-AB4E-7E217EFBDD52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B397369B-A079-44FA-AB4E-7E217EFBDD52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B397369B-A079-44FA-AB4E-7E217EFBDD52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B397369B-A079-44FA-AB4E-7E217EFBDD52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{870FE486-51A9-49FD-B19E-C4894426C255} = {71FD151B-4248-41B8-8EC9-D8415F8D58E1}
 		{E3BEDB10-B825-41D3-BF3F-3DF4EE0A1FE7} = {AD7ADD76-50A0-4191-84C8-85F8225C4F13}
+		{B397369B-A079-44FA-AB4E-7E217EFBDD52} = {AD7ADD76-50A0-4191-84C8-85F8225C4F13}
 	EndGlobalSection
 EndGlobal
