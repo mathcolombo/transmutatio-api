@@ -6,4 +6,15 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Conversions\Repositories\Interfaces\" />
+      <Folder Include="Formats\Repositories\Interfaces\" />
+      <Folder Include="Formats\Services\Interfaces\" />
+      <Folder Include="TypeConversions\Entities\Enums\" />
+      <Folder Include="TypeConversions\Repositories\Interfaces\" />
+      <Folder Include="TypeConversions\Services\Interfaces\" />
+      <Folder Include="Utils\Enums\" />
+      <Folder Include="Utils\Services\" />
+    </ItemGroup>
+
 </Project>
