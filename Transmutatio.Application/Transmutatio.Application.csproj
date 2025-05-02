@@ -6,4 +6,12 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Conversions\Extensions\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Transmutatio.Domain\Transmutatio.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

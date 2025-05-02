@@ -12,10 +12,8 @@ builder.Services.AddSwaggerGen();
 
 #region IOC configuration
 builder.Services.AddAbstractions();
-builder.Services.AddInfrastructureRepositories();
-builder.Services.AddDomainServices();
-builder.Services.AddApplicationServices();
-builder.Services.AddAutoMapperConfiguration();
+builder.Services.AddRepositories();
+builder.Services.AddServices();
 #endregion
 
 // Configure logger
