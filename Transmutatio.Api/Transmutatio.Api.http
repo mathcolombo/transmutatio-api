@@ -1,6 +1,0 @@
-@Transmutatio.Api_HostAddress = http://localhost:5121
-
-GET {{Transmutatio.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

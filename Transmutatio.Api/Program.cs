@@ -24,7 +24,24 @@ builder.Services.AddLogging(loggingBuilder =>
     loggingBuilder.AddDebug();
 });
 
+const string myAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: myAllowSpecificOrigins,
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .WithExposedHeaders("Content-Disposition");
+        });
+
+});
+
 var app = builder.Build();
+
+app.UseCors(myAllowSpecificOrigins);
 
 // Configure the HTTP request pipeline.
 // if (app.Environment.IsDevelopment())
