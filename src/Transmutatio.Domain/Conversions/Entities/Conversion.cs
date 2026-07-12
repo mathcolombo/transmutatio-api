@@ -1,5 +1,4 @@
 ﻿using Transmutatio.Domain.Conversions.Entities.Enums;
-using Transmutatio.Domain.TypeConversions.Entities;
 using Transmutatio.Domain.Utils.Entities;
 using Transmutatio.Domain.Utils.Extensions;
 
@@ -16,12 +15,6 @@ public class Conversion
     public DateTime RequestDate { get; protected set; }
     public DateTime? CompletionDate { get; protected set; }
     public ErrorMessage? ErrorMessage { get; protected set; }
-
-    #region Navigates
-
-    public TypeConversion TypeConversion { get; protected set; }
-
-    #endregion
     
     public Conversion() {}
 

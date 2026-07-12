@@ -1,8 +1,10 @@
-﻿using Transmutatio.Application.Conversions.Dtos;
+using Transmutatio.Application.Conversions.DTOs;
+using Transmutatio.Application.Conversions.DTOs.Responses;
+using Transmutatio.Domain.Conversions.Commands;
 
 namespace Transmutatio.Application.Conversions.Services.Interfaces;
 
 public interface IConversionsAppService
-{ 
-    Task<(Stream File, string FileName, string ContentType)> Convert(ConversionInsertRequest request);
+{
+    Task<ConversionYoutubeResponse> ConvertYoutubeAsync(YoutubeConversionRequest request);
 }

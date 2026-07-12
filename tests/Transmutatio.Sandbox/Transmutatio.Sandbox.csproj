@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="YoutubeExplode" Version="6.6.0" />
+      <ProjectReference Include="..\..\src\Transmutatio.Domain\Transmutatio.Domain.csproj" />
     </ItemGroup>
 
 </Project>

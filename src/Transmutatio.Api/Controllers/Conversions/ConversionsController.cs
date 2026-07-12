@@ -1,30 +1,29 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Transmutatio.Application.Conversions.Dtos;
+using Transmutatio.Application.Conversions.DTOs;
+using Transmutatio.Application.Conversions.DTOs.Responses;
 using Transmutatio.Application.Conversions.Services.Interfaces;
-using YoutubeExplode;
-using YoutubeExplode.Videos.Streams;
 
 namespace Transmutatio.Api.Controllers.Conversions;
 
 [ApiController]
-[Route("/api/conversions")]
-public class ConversionsController : Controller
+[Route("api/[controller]")]
+public class ConversionsController(IConversionsAppService conversionsAppService) : ControllerBase
 {
-    private readonly IConversionsAppService _conversionsAppService;
-
-    public ConversionsController(IConversionsAppService conversionsAppService)
+    [HttpPost("youtube")]
+    public async Task<IActionResult> ConvertYoutubeAsync([FromBody] YoutubeConversionRequest request)
     {
-        _conversionsAppService = conversionsAppService;
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> Convert([FromBody] ConversionInsertRequest request)
-    {
-        (Stream file, string fileName, string contentType) = await _conversionsAppService.Convert(request);
-
-        return new FileStreamResult(file, contentType)
+        try
         {
-            FileDownloadName = fileName
-        };
+            ConversionYoutubeResponse result = await conversionsAppService.ConvertYoutubeAsync(request);
+            return File(result.FileBytes, result.ContentType, result.DownloadName);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Erro durante a transmutação da mídia.", details = ex.Message });
+        }
     }
 }

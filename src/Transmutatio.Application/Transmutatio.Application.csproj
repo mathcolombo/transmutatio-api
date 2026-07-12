@@ -7,11 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Conversions\Extensions\" />
+      <ProjectReference Include="..\Transmutatio.Domain\Transmutatio.Domain.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Transmutatio.Domain\Transmutatio.Domain.csproj" />
+      <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+        <HintPath>..\..\..\..\..\.nuget\packages\microsoft.aspnetcore.app.ref\10.0.9\ref\net10.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

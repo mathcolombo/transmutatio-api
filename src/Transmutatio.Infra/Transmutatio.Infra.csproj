@@ -7,15 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Conversions\Repositories\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="YoutubeExplode" Version="6.6.0" />
-      <PackageReference Include="YoutubeExplode.Converter" Version="6.6.0" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\Transmutatio.Domain\Transmutatio.Domain.csproj" />
     </ItemGroup>
 
