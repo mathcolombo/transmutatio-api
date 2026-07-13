@@ -5,21 +5,20 @@ FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
 WORKDIR /app
 EXPOSE 8080
 
-# Mudar temporariamente para root para instalar os pacotes do Linux
 USER root
 
-# Instalar ffmpeg, python3 (requerido pelo yt-dlp) e curl para baixar o yt-dlp atualizado
+# Instalando ffmpeg, python3, curl e NODEJS (essencial para decodificar assinaturas do YT na nuvem)
 RUN apt-get update && apt-get install -y \
     ffmpeg \
     python3 \
     curl \
+    nodejs \
     && rm -rf /var/lib/apt/lists/*
 
-# Baixar a versão estável mais recente do yt-dlp diretamente do repositório oficial
+# Baixar a versão estável mais recente do yt-dlp
 RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp \
     && chmod a+rx /usr/local/bin/yt-dlp
 
-# Voltar para o usuário do .NET por segurança, mas garantir acesso à pasta /app
 RUN chown -R 1654:1654 /app
 USER 1654
 

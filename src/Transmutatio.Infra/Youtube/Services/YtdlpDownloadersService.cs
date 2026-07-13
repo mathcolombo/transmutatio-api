@@ -15,16 +15,18 @@ public class YtdlpDownloadersService : IYoutubeDownloadersService
         string ext = targetFormat == TargetFormat.Mp3 ? "mp3" : "mp4";
         string outputPath = Path.Combine(outputDirectory, $"{uniqueId}.{ext}");
 
-        string arguments = targetFormat == TargetFormat.Mp3
-            ? $"-x --audio-format mp3 --audio-quality 0 -o \"{outputPath}\" \"{videoUrl}\""
-            : $"-f \"bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]\" -o \"{outputPath}\" \"{videoUrl}\"";
+        string commonArgs = "--user-agent \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\" --extractor-args \"youtube:player_client=android,web\"";
 
+        string arguments = targetFormat == TargetFormat.Mp3
+            ? $"{commonArgs} -x --audio-format mp3 --audio-quality 0 -o \"{outputPath}\" \"{videoUrl}\""
+            : $"{commonArgs} -f \"bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]\" -o \"{outputPath}\" \"{videoUrl}\"";
+        
         var startInfo = new ProcessStartInfo
         {
             FileName = "yt-dlp",
             Arguments = arguments,
             RedirectStandardOutput = false,
-            RedirectStandardError = false,
+            RedirectStandardError = true,
             UseShellExecute = false,
             CreateNoWindow = true
         };
