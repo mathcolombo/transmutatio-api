@@ -9,11 +9,9 @@ public class YoutubeService(
 {
     public async Task<string> DownloadFromUrlAsync(string url, TargetFormat format)
     {
-        string homePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-
-        string subFolder = format == TargetFormat.Mp3 ? "Music" : "Videos";
-        string path = Path.Combine(homePath, subFolder);
+        string baseTempPath = Path.GetTempPath();
+        string targetDirectory = Path.Combine(baseTempPath, "TransmutatioMedia");
         
-        return await youtubeDownloadersService.DownloadMediaAsync(url, format, path);
+        return await youtubeDownloadersService.DownloadMediaAsync(url, format, targetDirectory);
     }
 }
