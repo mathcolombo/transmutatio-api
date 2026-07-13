@@ -1,16 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Transmutatio.Application.Conversions.DTOs;
+using Transmutatio.Application.Conversions.DTOs.Requests;
 using Transmutatio.Application.Conversions.DTOs.Responses;
 using Transmutatio.Application.Conversions.Services.Interfaces;
 
 namespace Transmutatio.Api.Controllers.Conversions;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/conversions")]
 public class ConversionsController(IConversionsAppService conversionsAppService) : ControllerBase
 {
     [HttpPost("youtube")]
-    public async Task<IActionResult> ConvertYoutubeAsync([FromBody] YoutubeConversionRequest request)
+    public async Task<IActionResult> ConvertYoutubeAsync([FromBody] ConversionYoutubeRequest request)
     {
         try
         {
@@ -23,7 +23,7 @@ public class ConversionsController(IConversionsAppService conversionsAppService)
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Erro durante a transmutação da mídia.", details = ex.Message });
+            return StatusCode(500, new { message = "Error while attempting to convert", details = ex.Message });
         }
     }
 }

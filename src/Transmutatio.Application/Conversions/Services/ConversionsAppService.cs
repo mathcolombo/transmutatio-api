@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.Extensions.Logging;
-using Transmutatio.Application.Conversions.DTOs;
+using Transmutatio.Application.Conversions.DTOs.Requests;
 using Transmutatio.Application.Conversions.DTOs.Responses;
 using Transmutatio.Application.Conversions.Services.Interfaces;
 using Transmutatio.Domain.Conversions.Commands;
@@ -13,7 +13,7 @@ public class ConversionsAppService(
     ILogger<ConversionsAppService> logger
 ) : IConversionsAppService
 {
-    public async Task<ConversionYoutubeResponse> ConvertYoutubeAsync(YoutubeConversionRequest request)
+    public async Task<ConversionYoutubeResponse> ConvertYoutubeAsync(ConversionYoutubeRequest request)
     {
         const string evento = nameof(ConvertYoutubeAsync);
         

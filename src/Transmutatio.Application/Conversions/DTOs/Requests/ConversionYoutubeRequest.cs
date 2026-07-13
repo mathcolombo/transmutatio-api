@@ -1,8 +1,8 @@
 using Transmutatio.Domain.Conversions.Enums;
 
-namespace Transmutatio.Application.Conversions.DTOs;
+namespace Transmutatio.Application.Conversions.DTOs.Requests;
 
-public record YoutubeConversionRequest(
+public record ConversionYoutubeRequest(
     string Url,
     TargetFormat Format
 );

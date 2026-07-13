@@ -9,7 +9,6 @@ builder.Services.AddSwaggerGen();
 
 // Configure database connection
 
-
 #region IOC configuration
 builder.Services.AddAbstractions();
 builder.Services.AddRepositories();
